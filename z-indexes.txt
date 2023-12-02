@@ -1,0 +1,8 @@
+-20: hexagon backgrounds
+-15: path
+-10: river
+-9: bridge, docks
+-5: vegetation
+-2: edge objects (walls)
+1: clouds
+10: border

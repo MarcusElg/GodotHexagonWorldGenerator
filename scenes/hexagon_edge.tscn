@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccyhfxeww3m2m"]
+
+[ext_resource type="Script" path="res://scripts/hexagon/hexagon_edge.gd" id="1_d1m11"]
+
+[node name="hexagon_edge" type="Node2D"]
+script = ExtResource("1_d1m11")

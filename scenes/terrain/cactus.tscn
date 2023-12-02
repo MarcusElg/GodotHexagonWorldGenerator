@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dky2fk2fbotkp"]
+
+[ext_resource type="Texture2D" uid="uid://cjyjxaksxs3iu" path="res://textures/terrain/vegetation/cactus.svg" id="1_vyw08"]
+
+[node name="cactus" type="Sprite2D"]
+texture = ExtResource("1_vyw08")

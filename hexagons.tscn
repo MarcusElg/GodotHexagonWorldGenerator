@@ -1,0 +1,534 @@
+[gd_scene load_steps=58 format=3 uid="uid://bwjsws0dvvutv"]
+
+[ext_resource type="Script" path="res://ui_manager.gd" id="1_nujbb"]
+[ext_resource type="Script" path="res://scripts/configuration/terrain_type.gd" id="2_hagqo"]
+[ext_resource type="Texture2D" uid="uid://byyc3dgu5op5j" path="res://textures/ui/modes/debug_mode.svg" id="2_urqjk"]
+[ext_resource type="Script" path="res://scripts/world.gd" id="3_1w43c"]
+[ext_resource type="PackedScene" uid="uid://drctqacpbdc8o" path="res://scenes/terrain/tree.tscn" id="3_d1ln7"]
+[ext_resource type="PackedScene" uid="uid://l8xmqsqonv7p" path="res://scenes/hexagon.tscn" id="3_iqx4n"]
+[ext_resource type="Texture2D" uid="uid://3qqb7b7bn2q0" path="res://textures/border/background_mask.png" id="3_ixwki"]
+[ext_resource type="Texture2D" uid="uid://02rvyggcipwn" path="res://textures/ui/modes/view_mode.svg" id="3_ybtbb"]
+[ext_resource type="Texture2D" uid="uid://bk2lxyy37vpq1" path="res://textures/ui/modes/biome_mode.svg" id="4_31jcp"]
+[ext_resource type="Script" path="res://scripts/configuration/vegetation_type.gd" id="4_aeymj"]
+[ext_resource type="Script" path="res://scripts/camera_movement.gd" id="4_vftqx"]
+[ext_resource type="PackedScene" uid="uid://csxkjshsy16xo" path="res://scenes/terrain/flower.tscn" id="4_vi3d3"]
+[ext_resource type="Texture2D" uid="uid://nekay06emeqv" path="res://textures/ui/modes/path_mode.svg" id="5_h5h21"]
+[ext_resource type="Texture2D" uid="uid://hfkx7qbcox17" path="res://textures/ui/modes/walls_mode.svg" id="6_dt5n4"]
+[ext_resource type="Script" path="res://scripts/ui/show_generation_options.gd" id="8_rr1ge"]
+[ext_resource type="PackedScene" uid="uid://d3aqjbrrp7ke0" path="res://scenes/river.tscn" id="9_3rddd"]
+[ext_resource type="PackedScene" uid="uid://dky2fk2fbotkp" path="res://scenes/terrain/cactus.tscn" id="9_x50x7"]
+[ext_resource type="PackedScene" uid="uid://cskqvxuvltky6" path="res://scenes/background_border.tscn" id="10_vgj6m"]
+[ext_resource type="Texture2D" uid="uid://8i8sgl6yqjje" path="res://textures/border/background_border_corner.png" id="11_23aek"]
+[ext_resource type="PackedScene" uid="uid://dg042kdsesvem" path="res://scenes/terrain/rocks.tscn" id="11_clnvn"]
+[ext_resource type="Texture2D" uid="uid://bwdj5wtxkk3cp" path="res://textures/terrain/background/plains.svg" id="11_qr1e7"]
+[ext_resource type="PackedScene" uid="uid://bptk7tvv18hsh" path="res://scenes/terrain/palm.tscn" id="14_moksk"]
+[ext_resource type="Texture2D" uid="uid://co458gdc8lbhf" path="res://textures/terrain/background/forest.svg" id="15_4myq5"]
+[ext_resource type="Texture2D" uid="uid://dfg5ahmpdsh6v" path="res://textures/terrain/background/desert.svg" id="17_4iqcb"]
+[ext_resource type="Script" path="res://scripts/export_image.gd" id="17_xbjo7"]
+[ext_resource type="Texture2D" uid="uid://dyqugnqfyy5hd" path="res://textures/terrain/background/mountains.svg" id="19_6qj6n"]
+[ext_resource type="PackedScene" uid="uid://ccyhfxeww3m2m" path="res://scenes/hexagon_edge.tscn" id="20_6awbu"]
+[ext_resource type="Texture2D" uid="uid://dm6qdoihq502t" path="res://textures/terrain/background/jungle.svg" id="21_dpet0"]
+[ext_resource type="Texture2D" uid="uid://b86eyyw41tcds" path="res://textures/terrain/background/lake.svg" id="23_tmi1e"]
+[ext_resource type="Texture2D" uid="uid://7y4qp0e53f24" path="res://textures/terrain/background/village.svg" id="24_6unng"]
+[ext_resource type="Texture2D" uid="uid://bvvjsg7o7skkk" path="res://textures/terrain/background/fields.svg" id="25_g0s1c"]
+[ext_resource type="Texture2D" uid="uid://bq5u3k57qx00x" path="res://textures/paths/path.svg" id="26_vxo2y"]
+[ext_resource type="Script" path="res://scripts/clouds/clouds.gd" id="27_5vbva"]
+[ext_resource type="Texture2D" uid="uid://dlm7f8oe7yix4" path="res://textures/paths/path_intersection.svg" id="27_n1w60"]
+[ext_resource type="Texture2D" uid="uid://d4le68imxy0yx" path="res://textures/world_mask.png" id="27_opprk"]
+[ext_resource type="Texture2D" uid="uid://cvl6ori1toxm2" path="res://textures/bridge.svg" id="27_v6g5m"]
+[ext_resource type="Texture2D" uid="uid://weoausdyy1q" path="res://textures/terrain/docks.svg" id="33_ffd42"]
+[ext_resource type="Texture2D" uid="uid://chncq67x2upij" path="res://textures/walls/walls.svg" id="34_0hc05"]
+[ext_resource type="Texture2D" uid="uid://b3parcfn0b1h" path="res://textures/walls/open_walls.svg" id="35_25gmb"]
+[ext_resource type="Texture2D" uid="uid://x36jdd8awluj" path="res://textures/clouds/clouds1.svg" id="37_m488p"]
+[ext_resource type="Texture2D" uid="uid://cf10jxedxa10s" path="res://textures/clouds/clouds2.svg" id="38_m37ns"]
+[ext_resource type="Texture2D" uid="uid://jxh6wtv3urh6" path="res://textures/clouds/clouds3.svg" id="39_dcn5m"]
+
+[sub_resource type="Resource" id="Resource_5tr5q"]
+script = ExtResource("4_aeymj")
+scene_instance = ExtResource("4_vi3d3")
+base_scale = 0.04325
+min_scale = 0.8
+max_scale = 1.2
+randomly_rotate = true
+
+[sub_resource type="Resource" id="Resource_rnu4x"]
+script = ExtResource("2_hagqo")
+name = &"plains"
+background_texture = ExtResource("11_qr1e7")
+allow_paths = true
+min_temperature = 0.5
+max_temperature = 1.0
+min_humidity = 0.4
+max_humidity = 0.7
+vegetation = Array[ExtResource("4_aeymj")]([SubResource("Resource_5tr5q")])
+max_vegetation_count = 20
+
+[sub_resource type="Resource" id="Resource_7dctw"]
+script = ExtResource("4_aeymj")
+scene_instance = ExtResource("3_d1ln7")
+base_scale = 0.0645
+min_scale = 0.6
+max_scale = 1.5
+randomly_rotate = true
+
+[sub_resource type="Resource" id="Resource_35vs1"]
+script = ExtResource("2_hagqo")
+name = &"forest"
+background_texture = ExtResource("15_4myq5")
+allow_paths = true
+min_temperature = 0.0
+max_temperature = 0.5
+min_humidity = 0.4
+max_humidity = 0.7
+vegetation = Array[ExtResource("4_aeymj")]([SubResource("Resource_7dctw")])
+max_vegetation_count = 30
+
+[sub_resource type="Resource" id="Resource_1t01b"]
+script = ExtResource("4_aeymj")
+scene_instance = ExtResource("9_x50x7")
+base_scale = 0.0635
+min_scale = 0.8
+max_scale = 1.2
+randomly_rotate = false
+
+[sub_resource type="Resource" id="Resource_y4h78"]
+script = ExtResource("2_hagqo")
+name = &"desert"
+background_texture = ExtResource("17_4iqcb")
+allow_paths = true
+min_temperature = 0.5
+max_temperature = 1.0
+min_humidity = 0.0
+max_humidity = 0.4
+vegetation = Array[ExtResource("4_aeymj")]([SubResource("Resource_1t01b")])
+max_vegetation_count = 10
+
+[sub_resource type="Resource" id="Resource_5jnn7"]
+script = ExtResource("4_aeymj")
+scene_instance = ExtResource("11_clnvn")
+base_scale = 0.10025
+min_scale = 0.8
+max_scale = 1.2
+randomly_rotate = true
+
+[sub_resource type="Resource" id="Resource_yohl0"]
+script = ExtResource("2_hagqo")
+name = &"mountains"
+background_texture = ExtResource("19_6qj6n")
+allow_paths = true
+min_temperature = 0.0
+max_temperature = 0.5
+min_humidity = 0.0
+max_humidity = 0.4
+vegetation = Array[ExtResource("4_aeymj")]([SubResource("Resource_5jnn7")])
+max_vegetation_count = 5
+
+[sub_resource type="Resource" id="Resource_eue50"]
+script = ExtResource("4_aeymj")
+scene_instance = ExtResource("14_moksk")
+base_scale = 0.1005
+min_scale = 0.8
+max_scale = 1.2
+randomly_rotate = true
+
+[sub_resource type="Resource" id="Resource_m7181"]
+script = ExtResource("2_hagqo")
+name = &"jungle"
+background_texture = ExtResource("21_dpet0")
+allow_paths = true
+min_temperature = 0.0
+max_temperature = 1.0
+min_humidity = 0.7
+max_humidity = 1.0
+vegetation = Array[ExtResource("4_aeymj")]([SubResource("Resource_eue50")])
+max_vegetation_count = 20
+
+[sub_resource type="Resource" id="Resource_c42as"]
+script = ExtResource("2_hagqo")
+name = &"lake"
+background_texture = ExtResource("23_tmi1e")
+allow_paths = false
+min_temperature = 0.0
+max_temperature = 0.0
+min_humidity = 0.0
+max_humidity = 0.0
+vegetation = Array[ExtResource("4_aeymj")]([])
+max_vegetation_count = 5
+
+[sub_resource type="Resource" id="Resource_bis4x"]
+script = ExtResource("2_hagqo")
+name = &"village"
+background_texture = ExtResource("24_6unng")
+allow_paths = true
+min_temperature = 0.0
+max_temperature = 0.0
+min_humidity = 0.0
+max_humidity = 0.0
+vegetation = Array[ExtResource("4_aeymj")]([])
+max_vegetation_count = 5
+
+[sub_resource type="Resource" id="Resource_1q8i2"]
+script = ExtResource("2_hagqo")
+name = &"fields"
+background_texture = ExtResource("25_g0s1c")
+allow_paths = true
+min_temperature = 0.0
+max_temperature = 0.0
+min_humidity = 0.0
+max_humidity = 0.0
+vegetation = Array[ExtResource("4_aeymj")]([])
+max_vegetation_count = 5
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_wv71v"]
+frequency = 0.0001
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_b815h"]
+frequency = 0.0001
+
+[node name="hexagons" type="Node2D"]
+
+[node name="UI" type="CanvasLayer" parent="." node_paths=PackedStringArray("world", "clouds", "options", "mode_texture")]
+layer = 2
+script = ExtResource("1_nujbb")
+mode_textures = Array[Texture2D]([ExtResource("2_urqjk"), ExtResource("3_ybtbb"), ExtResource("4_31jcp"), ExtResource("5_h5h21"), ExtResource("6_dt5n4")])
+world = NodePath("../World")
+clouds = NodePath("../World/Clouds")
+options = NodePath("HBoxContainer/SidePanel/MarginContainer/VBoxContainer/VBoxContainer")
+mode_texture = NodePath("ModeContainer/VBoxContainer/PanelContainer/MarginContainer/TextureRect")
+
+[node name="FileDialog" type="FileDialog" parent="UI" node_paths=PackedStringArray("screenshot_camera", "ui")]
+canvas_cull_mask = 4293918721
+size = Vector2i(392, 162)
+access = 2
+filters = PackedStringArray("*.png")
+script = ExtResource("17_xbjo7")
+screenshot_camera = NodePath("../../ScreenshotCamera")
+ui = NodePath("..")
+
+[node name="ModeContainer" type="MarginContainer" parent="UI"]
+offset_right = 1152.0
+offset_bottom = 26.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/ModeContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/ModeContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Mode:"
+
+[node name="PanelContainer" type="PanelContainer" parent="UI/ModeContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/ModeContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="TextureRect" type="TextureRect" parent="UI/ModeContainer/VBoxContainer/PanelContainer/MarginContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+expand_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -328.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="ShowGenerationOptions" type="Button" parent="UI/HBoxContainer" node_paths=PackedStringArray("panel")]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 0
+text = ">"
+script = ExtResource("8_rr1ge")
+panel = NodePath("../SidePanel")
+
+[node name="SidePanel" type="PanelContainer" parent="UI/HBoxContainer"]
+layout_mode = 2
+mouse_force_pass_scroll_events = false
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/HBoxContainer/SidePanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/HBoxContainer/SidePanel/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Generation Options" type="Label" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Generation Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Hexagon Count" type="HBoxContainer" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/VBoxContainer/Hexagon Count"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Hexagon Count"
+
+[node name="Value" type="SpinBox" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/VBoxContainer/Hexagon Count"]
+layout_mode = 2
+tooltip_text = "Amount of hexagons away from center. Total hexagon width is 1 + 2 * value"
+max_value = 10.0
+
+[node name="River Count" type="HBoxContainer" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/VBoxContainer/River Count"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "River Count"
+
+[node name="Min" type="SpinBox" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/VBoxContainer/River Count"]
+layout_mode = 2
+tooltip_text = "Min"
+max_value = 3.0
+
+[node name="Label2" type="Label" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/VBoxContainer/River Count"]
+layout_mode = 2
+text = "-"
+
+[node name="Max" type="SpinBox" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/VBoxContainer/River Count"]
+layout_mode = 2
+tooltip_text = "Max"
+max_value = 3.0
+
+[node name="Lake Count" type="HBoxContainer" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/VBoxContainer/Lake Count"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Lake Count"
+
+[node name="Min" type="SpinBox" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/VBoxContainer/Lake Count"]
+layout_mode = 2
+tooltip_text = "Min"
+max_value = 5.0
+
+[node name="Label2" type="Label" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/VBoxContainer/Lake Count"]
+layout_mode = 2
+text = "-"
+
+[node name="Max" type="SpinBox" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/VBoxContainer/Lake Count"]
+layout_mode = 2
+tooltip_text = "Max"
+max_value = 5.0
+
+[node name="Village Count" type="HBoxContainer" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/VBoxContainer/Village Count"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Village Count"
+
+[node name="Min" type="SpinBox" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/VBoxContainer/Village Count"]
+layout_mode = 2
+tooltip_text = "Min"
+max_value = 5.0
+
+[node name="Label2" type="Label" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/VBoxContainer/Village Count"]
+layout_mode = 2
+text = "-"
+
+[node name="Max" type="SpinBox" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/VBoxContainer/Village Count"]
+layout_mode = 2
+tooltip_text = "Max"
+max_value = 5.0
+
+[node name="Generate Fields" type="HBoxContainer" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/VBoxContainer/Generate Fields"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Generate Fields"
+
+[node name="Value" type="CheckBox" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/VBoxContainer/Generate Fields"]
+layout_mode = 2
+tooltip_text = "Generate fields around villages"
+
+[node name="Generate Docks" type="HBoxContainer" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/VBoxContainer/Generate Docks"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Generate Docks"
+
+[node name="Value" type="CheckBox" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/VBoxContainer/Generate Docks"]
+layout_mode = 2
+tooltip_text = "Generate docks on lakes around villages"
+
+[node name="Biome Scale" type="HBoxContainer" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/VBoxContainer/Biome Scale"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Biome Scale"
+
+[node name="Value" type="SpinBox" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/VBoxContainer/Biome Scale"]
+layout_mode = 2
+min_value = 1.0
+max_value = 98.0
+value = 1.0
+
+[node name="Spacing" type="MarginContainer" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 15
+
+[node name="Generate Clouds" type="HBoxContainer" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/VBoxContainer/Generate Clouds"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Generate Clouds"
+
+[node name="Value" type="CheckBox" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/VBoxContainer/Generate Clouds"]
+layout_mode = 2
+tooltip_text = "Generate docks on lakes around villages"
+
+[node name="Cloud Speed" type="HBoxContainer" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/VBoxContainer/Cloud Speed"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Cloud Speed"
+
+[node name="Value" type="SpinBox" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/VBoxContainer/Cloud Speed"]
+layout_mode = 2
+value = 1.0
+suffix = "px/s"
+
+[node name="Cloud Wait Time" type="HBoxContainer" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/VBoxContainer/Cloud Wait Time"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Cloud Wait Time"
+
+[node name="Min" type="SpinBox" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/VBoxContainer/Cloud Wait Time"]
+layout_mode = 2
+tooltip_text = "Min - the waiting time in one tenth second between spawning two clouds"
+min_value = 1.0
+value = 10.0
+suffix = "ds"
+
+[node name="Label2" type="Label" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/VBoxContainer/Cloud Wait Time"]
+layout_mode = 2
+text = "-"
+
+[node name="Max" type="SpinBox" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/VBoxContainer/Cloud Wait Time"]
+layout_mode = 2
+tooltip_text = "Max - the waiting time in one tenth second between spawning two clouds"
+min_value = 1.0
+value = 10.0
+suffix = "ds"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Regenerate" type="Button" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "Regenerate"
+
+[node name="Export Image" type="Button" parent="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "Export Image
+"
+
+[node name="Camera" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+editor_draw_limits = true
+script = ExtResource("4_vftqx")
+
+[node name="ScreenshotCamera" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+editor_draw_limits = true
+
+[node name="World" type="Node2D" parent="." node_paths=PackedStringArray("screenshot_camera")]
+script = ExtResource("3_1w43c")
+terrain_types = Array[ExtResource("2_hagqo")]([SubResource("Resource_rnu4x"), SubResource("Resource_35vs1"), SubResource("Resource_y4h78"), SubResource("Resource_yohl0"), SubResource("Resource_m7181"), SubResource("Resource_c42as"), SubResource("Resource_bis4x"), SubResource("Resource_1q8i2")])
+path_texture = ExtResource("26_vxo2y")
+path_intersection_texture = ExtResource("27_n1w60")
+bridge_texture = ExtResource("27_v6g5m")
+temperature_noise = SubResource("FastNoiseLite_wv71v")
+humidity_noise = SubResource("FastNoiseLite_b815h")
+screenshot_camera = NodePath("../ScreenshotCamera")
+hexagon_instance = ExtResource("3_iqx4n")
+hexagon_edge_instance = ExtResource("20_6awbu")
+river_instance = ExtResource("9_3rddd")
+background_border_instance = ExtResource("10_vgj6m")
+background_border_corner_texture = ExtResource("11_23aek")
+walls_texture = ExtResource("34_0hc05")
+open_walls_texture = ExtResource("35_25gmb")
+docks_texture = ExtResource("33_ffd42")
+
+[node name="Background" type="Node2D" parent="World"]
+z_index = 10
+
+[node name="Border" type="Sprite2D" parent="World/Background"]
+texture = ExtResource("3_ixwki")
+
+[node name="Hexagons" type="Node2D" parent="World"]
+
+[node name="Rivers" type="Node2D" parent="World"]
+z_index = -10
+
+[node name="Edges" type="Node2D" parent="World"]
+z_index = -2
+
+[node name="Clouds" type="Sprite2D" parent="World" node_paths=PackedStringArray("world")]
+clip_children = 1
+z_index = 1
+texture = ExtResource("27_opprk")
+script = ExtResource("27_5vbva")
+cloud_textures = Array[Texture2D]([ExtResource("37_m488p"), ExtResource("38_m37ns"), ExtResource("39_dcn5m")])
+cloud_count = 100
+min_cloud_scale = 0.1
+world = NodePath("..")
+
+[connection signal="file_selected" from="UI/FileDialog" to="UI/FileDialog" method="export_image"]
+[connection signal="button_down" from="UI/HBoxContainer/ShowGenerationOptions" to="UI/HBoxContainer/ShowGenerationOptions" method="toggle"]
+[connection signal="toggled" from="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/VBoxContainer/Generate Clouds/Value" to="UI" method="toggle_cloud_settings_editability"]
+[connection signal="button_down" from="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/HBoxContainer/Regenerate" to="UI" method="regenerate"]
+[connection signal="button_down" from="UI/HBoxContainer/SidePanel/MarginContainer/VBoxContainer/HBoxContainer/Export Image" to="UI/FileDialog" method="open_dialog"]
+[connection signal="change_mode" from="World" to="UI" method="change_mode"]

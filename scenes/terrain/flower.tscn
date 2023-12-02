@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://csxkjshsy16xo"]
+
+[ext_resource type="Texture2D" uid="uid://icplrqp6vkrt" path="res://textures/terrain/vegetation/flower.svg" id="1_cyq2f"]
+
+[node name="flower" type="Sprite2D"]
+texture = ExtResource("1_cyq2f")

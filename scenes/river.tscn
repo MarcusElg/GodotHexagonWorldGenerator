@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3aqjbrrp7ke0"]
+
+[ext_resource type="Texture2D" uid="uid://br3mo7yu0sspy" path="res://textures/river.svg" id="1_bom8d"]
+[ext_resource type="Script" path="res://scripts/river.gd" id="1_culko"]
+
+[node name="river" type="Line2D"]
+texture_repeat = 2
+texture = ExtResource("1_bom8d")
+texture_mode = 1
+script = ExtResource("1_culko")
